@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurigence Soft SKill Courses</title>
+  <link rel="icon" type="image/png" href="Aurigence logo without background.png">
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background: rgb(231, 231, 221);
+        min-height: 100vh;
+    }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+/* Header Styles */
+    header {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 5px;
+        margin-bottom: 0px;
+        padding: 0px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+    .logo-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-bottom: 5px;
+    }
+    .logo {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        display: flex;
+        color: white;
+        font-weight: bold;
+        font-size: 24px;
+        box-shadow: 0 4px 20px rgba(255, 2, 2, 0.2);
+    }
+
+    .collaboration-text {
+        font-size: 28px;
+        font-weight: bold;
+        color: #2c3e50;
+        margin: 10px;
+    }
+    .accreditation {
+        color: white;
+        padding: 0px;
+        border-radius: 0px;
+        max-width: 600px;
+        text-align: left;
+        margin-top: 5px;
+    }
+    .accreditation-header {
+        display: flex;
+        align-items: left;
+        justify-content: left;
+    }
+
+    .accreditation-header .logo {
+        width: 80px;
+        height: auto;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .accreditation-header h2 {
+        font-size: 24px;
+        margin: 0;
+        color: black;
+        white-space: nowrap;
+        padding: 30px 0;
+    }
+/* Course Grid */
+    .courses-section {
+        margin-top: 40px;
+    }
+    .section-title {
+        text-align: center;
+        color: rgb(25, 25, 38);
+        font-size: 32px;
+        margin-bottom: 40px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    .courses-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 25px;
+        margin-top: 30px;
+    }
+    .course-card {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        padding: 25px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        backdrop-filter: blur(10px);
+        /* IMPORTANT: Ensure no background-image here */
+    }
+    .course-card:hover {
+        transform: translateY(-15px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    }
+    .course-image {
+        width: 100%;
+        height: 200px;
+        /* Keep these for proper background image styling */
+        background-color: lightgray; /* Fallback color */
+        background-size: cover; /* This makes the image cover the area */
+        background-position: center; /* This centers the image */
+        background-repeat: no-repeat; /* Ensure image doesn't repeat */
+        border-radius: 15px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white; /* For text fallback if image doesn't load */
+        font-size: 18px; /* For text fallback if image doesn't load */
+        font-weight: bold; /* For text fallback if image doesn't load */
+    }
+    .course-title {
+        font-size: 20px;
+        font-weight: bold;
+        color: #2c3e50;
+        margin-bottom: 10px;
+    }
+    .course-description {
+        color: #666;
+        margin-bottom: 20px;
+        line-height: 1.5;
+    }
+    .enroll-btn {
+        background: linear-gradient(135deg, #50ad6c 0%, #2791c8 100%);
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 25px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        width: 100%;
+    }
+    .enroll-btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+/* Removed course-detail page styles as it's no longer used */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .logo-section {
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 10px;
+        }
+    .logo {
+        width: 100px;
+        height: 100px;
+        font-size: 20px;
+    }
+    .collaboration-text {
+        font-size: 24px;
+    }
+    .accreditation {
+        margin-top: 10px;
+    }
+    .courses-grid {
+        grid-template-columns: 1fr;
+    }
+    .course-header {
+        flex-direction: column;
+    }
+    .course-detail-image {
+        width: 100%;
+    }
+    .container {
+        padding: 10px;
+    }
+    .accreditation-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .powered-by {
+        margin-top: 10px;
+    }
+}
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 24px;
+    }
+    .course-detail-title {
+        font-size: 24px;
+    }
+    .detail-section h3 {
+        font-size: 20px;
+    }
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="home-page">
+      <div class="logo-section">
+        <img src="Aurigence logo without background.png" alt="Logo" style="width: 200px; height: 155px;" />
+      </div>
+
+      <div class="courses-section">
+        <h2 class="section-title">Our Soft Skills Courses</h2>
+        <div class="courses-grid" id="courses-grid"></div>
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 0 40px; margin-top: 30px;">
+        <div style="display: flex; align-items: center; gap: 10px; margin-left: auto;">
+          <span style="font-weight: bold; font-size: 16px;">Powered by:</span>
+          <img src="Golden ARC LOGO.png" alt="GoldenARC Logo" style="height: 60px;" />
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Message Box for user feedback - Removed as per user request to use alert() -->
+  </div>
+
+
+  <script>
+    const courses = [
+        {
+        id: 1,
+        title: "Personal & Professional Development (PDP) 34 Hrs",
+        description: "<ul><li>Emotional Intelligence</li><li>Storytelling</li><li>Data Storytelling</li><li>Presentation Skills</li><li>Networking Skills</li></ul><br>",
+        imagePath: "PDP.jpeg",
+    },
+    {
+        id: 2,
+        title: "Campus Recruitment Training (CRT) 30 Hrs",
+        description: "<ul><li>CV Writing with Cover Letter - AI Friendly </li><li>Preparation for Group Discussions </li><li>Mock Group Discussions </li><li>Preparation for Mock Interviews </li><li>Mock Interviews</li></ul><br>",
+        imagePath: "CRT.jpeg",
+    },
+    {
+        id: 3,
+        title: "One to One Couselling 34 Hrs",
+        description: "<ul><li>Pre Work:<br>Self Assessment and Awareness<br>Career Exploration<br>Technical and Soft Skills Development Guidance<br>Market Awareness<br>Profile Grouping</li><li>One to One Counselling:<br>Action Plan Commitment</li><li>Post Work:<br>Gap Analysis and Future Planning<br>Final Review and Reinforcement</li></ul><br>",
+        imagePath: "O2O.jpeg",
+    },
+    {
+        id: 4,
+        title: "Campus to Corporate (2 Years Program) 128 Hrs",
+        description: "<ul><li>Emotional Intelligence</li><li>Storytelling</li><li>Self Assessment & Awareness</li><li>Career Exploration</li><li>Technical & Soft-Skills Development Guidance</li><li>Community Services</li><li>Networking Skills</li><li>Data Storytelling</li><li>Presentation Skills</li><li>Market Awareness</li><li>Profile Grouping</li><li>One to One Counselling</li><li>Action Plan Commitment</li><li>CV Writing with Cover Letter - AI Friendly</li><li>Pre-Work for Group Discussions</li><li>Pre-Work for Interviews</li><li>Gap Analysis and Future Planning</li><li>Mock Group Discussions</li><li>Mock Interviews</li><li>Final Review & Reinforcement</li><br>",
+        //"<ul>A Combination of:<li>Personal & Professional Development (PDP)</li><li>Campus Recruitment Training (CRT)</li><li>One to One Couselling</li></ul>",
+        imagePath: "CTC.jpeg",
+    },
+    ];
+
+
+    const coursesGrid = document.getElementById('courses-grid');
+    const homePage = document.getElementById('home-page');
+
+    function enrollInCourse(courseId) {
+        const course = courses.find(c => c.id === courseId);
+        if (course) {
+            alert(`Initiating payment for ${course.title}`);
+        } else {
+            alert("Error: Course not found.");
+        }
+    }
+
+    function renderCourseCards() {
+      coursesGrid.innerHTML = '';
+      courses.forEach(course => {
+        const card = document.createElement('div');
+        card.classList.add('course-card');
+        card.dataset.id = course.id;
+        card.innerHTML = `
+          <div class="course-image" style="background-image: url('${course.imagePath}');"></div>
+          <div class="course-title">${course.title}</div>
+          <p class="course-description">${course.description}</p>
+          <button class="enroll-btn" data-id="${course.id}">Enroll Now</button>
+        `;
+        coursesGrid.appendChild(card);
+      });
+
+      document.querySelectorAll('.enroll-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const id = parseInt(e.target.dataset.id);
+          enrollInCourse(id);
+        });
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', renderCourseCards);
+  </script>
+</body>
+</html>
